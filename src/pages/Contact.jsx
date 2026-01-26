@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 export default function ContactPage() {
@@ -7,17 +8,54 @@ export default function ContactPage() {
     email: '',
     message: ''
   })
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('G5bE6mqBBE2XbTR4W') // Public key from EmailJS
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', message: '' })
-    alert('Thanks for reaching out! I\'ll get back to you soon.')
+    setIsLoading(true)
+    setSubmitStatus('')
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_contact', // Service ID
+        'template_contact', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'jaysonvelascowp@gmail.com'
+        }
+      )
+
+      console.log('Email sent successfully:', result)
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      alert('Thanks for reaching out! I\'ll get back to you soon.')
+      
+      // Clear status message after 5 seconds
+      setTimeout(() => setSubmitStatus(''), 5000)
+    } catch (error) {
+      console.error('Failed to send email:', error)
+      setSubmitStatus('error')
+      alert('Failed to send message. Please try again.')
+      
+      // Clear status message after 5 seconds
+      setTimeout(() => setSubmitStatus(''), 5000)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -71,7 +109,13 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-submit">Send Message</button>
+                <button 
+                  type="submit" 
+                  className="btn btn-primary btn-submit"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Sending...' : 'Send Message'}
+                </button>
               </form>
             </div>
           </div>
