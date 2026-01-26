@@ -95,8 +95,8 @@ html[data-theme="dark"] .contact-card {
 }
 
 .contact-card:hover {
-  transform: translateY(-20px) rotateX(10deg) rotateY(-8deg) translateZ(50px);
-  box-shadow: 0 30px 80px rgba(26, 58, 82, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(26, 58, 82, 0.2);
 }
 
 html[data-theme="dark"] .contact-card:hover {
@@ -107,7 +107,6 @@ html[data-theme="dark"] .contact-card:hover {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  transform: translateZ(30px);
 }
 
 .form-group {
