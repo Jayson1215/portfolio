@@ -42,7 +42,6 @@ export default function ContactPage() {
       console.log('Email sent successfully:', result)
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
-      alert('Thanks for reaching out! I\'ll get back to you soon.')
       
       // Clear status message after 5 seconds
       setTimeout(() => setSubmitStatus(''), 5000)
@@ -116,6 +115,11 @@ export default function ContactPage() {
                 >
                   {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
+                {submitStatus === 'success' && (
+                  <div className="success-message">
+                    ✓ Message successfully sent!
+                  </div>
+                )}
               </form>
             </div>
           </div>
