@@ -486,3 +486,67 @@ html[data-theme="dark"] .float-3 {
     font-size: 2.5rem;
   }
 }
+/* Make a Project Section */
+.projects-cta {
+  text-align: center;
+  padding: 60px;
+  background: rgba(var(--bg-rgb), 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  margin-top: 60px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.projects-cta h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 15px;
+}
+
+.projects-cta p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin: 0 0 30px;
+  line-height: 1.6;
+}
+
+.cta-button-project {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button-project:hover {
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
+}
+
+@media (max-width: 768px) {
+  .projects-cta {
+    padding: 40px 25px;
+    margin-top: 40px;
+  }
+
+  .projects-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .projects-cta p {
+    font-size: 1rem;
+  }
+
+  .cta-button-project {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

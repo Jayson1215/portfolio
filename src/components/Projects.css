@@ -47,9 +47,8 @@ html[data-theme="dark"] .projects {
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
   border-color: var(--card-color);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .project-icon {
@@ -135,8 +134,7 @@ html[data-theme="dark"] .tag {
 }
 
 .project-link:hover {
-  gap: 8px;
-  transform: translateX(5px);
+  gap: 5px;
 }
 
 /* Mobile Responsive */

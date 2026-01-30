@@ -23,6 +23,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
 
   const navItems = [
     { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
     { label: 'Projects', path: '/projects' },
     { label: 'Learning', path: '/learning' },
     { label: 'Contact', path: '/contact' }
@@ -38,7 +39,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <span className="logo-text">Velasco.</span>
+          <span className="logo-text">JV</span>
         </Link>
         
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

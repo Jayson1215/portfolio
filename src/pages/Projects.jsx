@@ -1,5 +1,6 @@
 import './Projects.css'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ProjectsPage() {
   const [clickedId, setClickedId] = useState(null)
@@ -72,6 +73,12 @@ export default function ProjectsPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="projects-cta">
+          <h2>Ready to Build Something Amazing?</h2>
+          <p>Let's collaborate and bring your ideas to life</p>
+          <Link to="/contact" className="cta-button-project">Make a Project</Link>
         </div>
 
         {/* 3D Background Elements */}
