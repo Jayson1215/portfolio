@@ -13,19 +13,7 @@ export default function AboutPage() {
         <h1 className="about-page-title">About Me</h1>
 
         <div className="about-content-wrapper">
-          {/* Left Side - Image */}
-          <div className="about-image-section">
-            <div className="about-image-container">
-              <img 
-                src="/Profile.jpg" 
-                alt="Jayson Velasco" 
-                className="about-image"
-              />
-              <div className="image-frame"></div>
-            </div>
-          </div>
-
-          {/* Right Side - Content */}
+          {/* Text Section */}
           <div className="about-text-section">
             <div className="about-intro">
               <h2>Hi, I'm Jayson Velasco</h2>
@@ -57,14 +45,32 @@ export default function AboutPage() {
                 <span className="section-icon">💼</span>
                 Professional Experience
               </h3>
+              
               <div className="experience-item">
-                <h4>Frontend Developer</h4>
+                <div className="exp-header">
+                  <h4>Frontend Developer</h4>
+                  <span className="exp-date">Current</span>
+                </div>
                 <p className="meta-info">Building responsive web applications and components</p>
                 <ul className="skills-list">
                   <li>Developed interactive React applications with modern JavaScript</li>
                   <li>Created responsive designs that work seamlessly across all devices</li>
                   <li>Implemented UI/UX best practices and accessibility standards</li>
                   <li>Collaborated with design teams to bring concepts to life</li>
+                </ul>
+              </div>
+
+              <div className="experience-item">
+                <div className="exp-header">
+                  <h4>Web Development Student</h4>
+                  <span className="exp-date">Learning</span>
+                </div>
+                <p className="meta-info">Continuously advancing skills in modern web technologies</p>
+                <ul className="skills-list">
+                  <li>Mastering React and component-based architecture</li>
+                  <li>Deepening knowledge of responsive and adaptive design</li>
+                  <li>Building projects using HTML5, CSS3, and modern JavaScript</li>
+                  <li>Learning performance optimization and web accessibility</li>
                 </ul>
               </div>
             </div>

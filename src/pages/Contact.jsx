@@ -139,6 +139,9 @@ export default function ContactPage() {
               <div className="info-card">
                 <h3>🐙 GitHub</h3>
                 <p>github.com/Jayson1215</p>
+                <a href="https://github.com/Jayson1215" target="_blank" rel="noopener noreferrer" className="github-contact-button">
+                  View My GitHub
+                </a>
               </div>
             </div>
           </div>

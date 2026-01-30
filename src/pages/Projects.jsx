@@ -56,20 +56,25 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div key={project.id} className="project-card-wrapper">
               <div className="project-card">
-                <div className="project-icon">{project.image}</div>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
+                <div className="project-image">
+                  <div className="project-icon-large">{project.image}</div>
+                  <div className="project-gradient-bg"></div>
                 </div>
-                <button 
-                  className={`btn btn-small ${clickedId === project.id ? 'clicked' : ''}`}
-                  onClick={() => handleViewProject(project.link, project.id)}
-                >
-                  View Project
-                </button>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <button 
+                    className={`btn btn-small ${clickedId === project.id ? 'clicked' : ''}`}
+                    onClick={() => handleViewProject(project.link, project.id)}
+                  >
+                    View Project
+                  </button>
+                </div>
               </div>
             </div>
           ))}
